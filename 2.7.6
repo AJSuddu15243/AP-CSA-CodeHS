@@ -1,11 +1,65 @@
-public class VendingRunner 
+public class VendingMachine 
 {
-    public static void main(String[] args) 
+    // Tracks how many items are in the machine
+    private int itemsAvailable;
+
+    // Constructor initializing items in machine
+    public VendingMachine(int intialItems)
     {
-        // Create new vending machine with 10 items
-        VendingMachine machine = new VendingMachine(10);
-        
-        // Make purchase with price $4.00 and payment $5.13
-        machine.purchaseItem(4.00, 5.13);
+        itemsAvailable = intialItems;
     }
+
+    public int getItems()
+    {
+        return itemsAvailable;
+    }
+
+    // Allows user to purchase an item if there are items available
+    // and if payment is larger than price
+    public void purchaseItem(double price, double payment)
+    {
+        if (itemsAvailable == 0)
+        {
+            System.out.println("Sorry, no more items available.");
+        }
+        else if (payment < price)
+        {
+            System.out.println("Please input enough money.");
+        }
+        else 
+        {
+            itemsAvailable--;
+            
+            System.out.println("Thank you for your purchase. Dispensing in change...");
+            
+            // Call giveChange with the change amount in dollars
+            giveChange(payment - price);
+        }
+    }
+
+    /* 
+     * Determines the appropriate change in coins and prints results.
+     * @param change - the difference between payment and price, in dollars.
+     */
+    public void giveChange(double change)
+    {
+        // Convert change from dollars to cents
+        int cents = (int) Math.round(change * 100);
+        
+        // Calculate number of quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢)
+        int quarters = cents / 25;
+        cents %= 25; // Remaining cents after quarters
+        int dimes = cents / 10;
+        cents %= 10; // Remaining cents after dimes
+        int nickels = cents / 5;
+        cents %= 5; // Remaining cents after nickels
+        int pennies = cents; // Remaining cents are pennies
+        
+        // Print the coin counts
+        System.out.println("Quarters: " + quarters);
+        System.out.println("Dimes: " + dimes);
+        System.out.println("Nickels: " + nickels);
+        System.out.println("Pennies: " + pennies);
+        System.out.println("Transaction complete.");
+    } 
 }
