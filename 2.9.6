@@ -1,0 +1,23 @@
+public class ExtractDigits
+{
+    public static void main(String[] args)
+    {
+        extractDigits(2938724);
+    }
+    
+    public static void extractDigits(int num)
+    {
+        // Check if number is positive
+        if (num <= 0) {
+            System.out.println("Please provide a positive integer");
+            return;
+        }
+        
+        // Extract and print digits in reverse order
+        while (num > 0) {
+            int digit = num % 10;    // Get last digit
+            System.out.println(digit); // Print the digit
+            num = num / 10;          // Remove last digit
+        }
+    }
+}
