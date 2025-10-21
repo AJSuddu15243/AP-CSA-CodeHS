@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class TaffyRunner
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Starting Taffy Timer...");
+        
+        while (true)
+        {
+            System.out.print("Enter the temperature: ");
+            int temperature = scanner.nextInt();
+            
+            if (temperature < 270)
+            {
+                System.out.println("\nThe mixture isn't ready yet.");
+            }
+            else
+            {
+                System.out.println("Your taffy is ready for the next step!");
+                break;
+            }
+        }
+        
+        scanner.close();
+    }
+}
