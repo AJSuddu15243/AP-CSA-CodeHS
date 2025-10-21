@@ -1,3 +1,25 @@
+public class Factors 
+{
+    /**
+     * This method checks to see if one number is a factor of another
+     * 
+     * @param number The base input number
+     * @param factor The number to be checked if a factor
+     * @return A boolean regarding if it is a factor
+     */
+    public static boolean checkFactors(int number, int factor)
+    {
+        // Handle edge case: factor cannot be 0
+        if (factor == 0) {
+            return false; // Avoid division by zero
+        }
+        // Check if factor divides number evenly (no remainder)
+        return number % factor == 0;
+    }
+}
+
+________________________________________
+
 import java.util.Scanner;
 
 public class FactorsRunner
