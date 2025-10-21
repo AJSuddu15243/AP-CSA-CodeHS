@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class CartRunner 
+{
+    public static void main(String[] args) 
+    {
+        Scanner input = new Scanner(System.in);
+
+        // Ask user how many items to add
+        System.out.print("How many items are you purchasing? ");
+        int numItems = input.nextInt();
+
+        // Create an empty shopping cart
+        ShoppingCart cart = new ShoppingCart();
+
+        // Loop to add each item
+        for (int i = 1; i <= numItems; i++) 
+        {
+            System.out.print("Price of item " + i + "? ");
+            double price = input.nextDouble();
+            cart.addItem(price);
+        }
+
+        // Print final shopping cart summary
+        System.out.println(cart);
+
+        input.close();
+    }
+}
