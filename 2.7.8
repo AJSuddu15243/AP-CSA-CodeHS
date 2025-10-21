@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class InfiniteLoops
+{
+    public static void main(String[] args)
+    {
+        // Test each method after fixing the infinite loops
+        countdownTimer();
+        findNumber();
+        checkPassword();
+    }
+
+    // Print out the seconds in a timer, stopping at 0 seconds
+    public static void countdownTimer() 
+    {
+        int timeLeft = 10;
+
+        // Fixed by decrementing timeLeft to make the condition false
+        while (timeLeft >= 0) 
+        {
+            System.out.println("Time remaining: " + timeLeft);
+            timeLeft--; // Decrement to eventually make timeLeft < 0
+        }
+
+        System.out.println("Countdown complete!");
+    }
+
+    // Find a target number using random generation
+    public static void findNumber() 
+    {
+        int target = 7;
+        
+        // Fixed by adding a break statement when the target is found
+        while (true) 
+        {   
+            // Generates a random number between 0 and 9
+            int num = (int) (Math.random() * 10);
+            System.out.println("Generated: " + num);
+            
+            // Break when the target number is found
+            if (num == target) 
+            {
+                System.out.println("Target number found!");
+                break; // Exit the loop
+            }
+        }
+        
+        // Other code can run after the loop
+    }
+
+    // Ask the user for their password, exiting when correct
+    public static void checkPassword() 
+    {
+        Scanner input = new Scanner(System.in);
+        String correctPassword = "JavaRocks";
+        
+        // Fixed by returning when the correct password is entered
+        while (true) 
+        {
+            System.out.print("Enter password: ");
+            String password = input.nextLine();
+            
+            // Return when the correct password is entered
+            if (password.equals(correctPassword)) 
+            {
+                System.out.println("Access granted.");
+                return; // Exit the method
+            }
+        }
+
+        // This code should never run
+    }
+}
