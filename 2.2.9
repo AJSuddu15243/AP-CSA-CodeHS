@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class TripleDouble 
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        
+        // Prompt user for points, rebounds, and assists
+        System.out.println("How many points did you score? ");
+        int points = input.nextInt();
+        System.out.println("How many rebounds did you get? ");
+        int rebounds = input.nextInt();
+        System.out.println("How many assists did you have? ");
+        int assists = input.nextInt();
+        
+        // Call methods to evaluate inputs
+        boolean hasEnoughPoints = hasPoints(points);
+        boolean hasEnoughRebounds = hasRebounds(rebounds);
+        boolean hasEnoughAssists = hasAssists(assists);
+        
+        // Print results
+        System.out.println("You got 10 or more points: " + hasEnoughPoints);
+        System.out.println("You got 10 or more rebounds: " + hasEnoughRebounds);
+        System.out.println("You got 10 or more assists: " + hasEnoughAssists);
+        
+        // Close scanner
+        input.close();
+    }
+    
+    public static boolean hasPoints(int points) 
+    {
+        return points >= 10;
+    }
+    
+    public static boolean hasRebounds(int rebounds) 
+    {
+        return rebounds >= 10;
+    }
+    
+    public static boolean hasAssists(int assists) 
+    {
+        return assists >= 10;
+    }
+}
