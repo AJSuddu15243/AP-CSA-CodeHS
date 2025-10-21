@@ -1,0 +1,23 @@
+public class RectangleOfStars
+{
+    public static void main(String[] args)
+    {  
+       // Call makeARectangle with desired rows and columns
+       makeARectangle(3, 5); // Example: 3 rows, 5 columns
+    }
+       
+    // Makes a rectangle of stars with specified rows and columns
+    public static void makeARectangle(int rows, int cols)
+    {
+        // The outer loop represents the number of rows
+        for (int row = 0; row < rows; row++)
+        {
+            // The inner loop represents the number of columns per row
+            for (int col = 0; col < cols; col++)
+            {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
