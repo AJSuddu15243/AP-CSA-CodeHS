@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class TeenRunner
+{
+    public static void main(String[] args)
+    {
+        // Create a Teen object
+        Teen teen = new Teen("Sonequa", "Martin-Green", 10);
+        
+        // Print the Teen object's toString
+        System.out.print(teen.toString());
+        
+        // Prompt user for input
+        System.out.println("Enter a text: ");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        
+        // Call teenTalk to modify the input text
+        String modifiedText = teen.teenTalk(input);
+        
+        // Print the modified text
+        System.out.println("The modified text would be:");
+        System.out.println(modifiedText);
+        
+        // Close the scanner
+        scanner.close();
+    }
+}
