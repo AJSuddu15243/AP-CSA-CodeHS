@@ -1,0 +1,29 @@
+public class RandomGenerator
+{
+    public static void main(String[] args)
+    {
+        // Prints a random integer between 20–25 inclusive
+        int randomExample = (int)(Math.random() * 6) + 20; // 6 = (25-20+1), 20 = min
+        System.out.println("Example (20–25): " + randomExample);
+
+        // 1. Print a random roll of a 6-sided dice (1–6)
+        int diceRoll = (int)(Math.random() * 6) + 1; // 6 = (6-1+1), 1 = min
+        System.out.println("Dice roll: " + diceRoll);
+
+        // 2. Print a random integer between 10–30 (inclusive)
+        int points = (int)(Math.random() * 21) + 10;  // 21 = (30-10+1), 10 = min
+        System.out.println("Points deducted: " + points);
+
+        // 3. Print a random 0 or 1 (1 = success, 0 = fail)
+        int chestResult = (int)(Math.random() * 2); // 2 = (1-0+1), 0 = min
+        System.out.println("Chest result: " + chestResult);
+
+        // 4. Print a random integer from 1,000,000 (inclusive) 
+        // up to but not including 2,000,000
+        int encryptionKey = (int)(Math.random() * 1000000)+1000000;
+        System.out.println("Encryption key: "+encryptionKey);
+
+        
+       
+    }
+}
