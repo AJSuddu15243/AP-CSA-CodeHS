@@ -1,0 +1,33 @@
+public class PrimeNumbers
+{
+    public static void main(String[] args)
+    {
+        isPrime(17);
+        isPrime(24);
+    }
+
+    // Determines if a number is prime and prints the results
+    public static void isPrime(int num)
+    {
+        // Handle non-prime cases: numbers <= 1
+        if (num <= 1)
+        {
+            System.out.println(num + " is not a prime number.");
+            return;
+        }
+
+        // Loop through every number from 2 up to num - 1
+        for (int i = 2; i < num; i++)
+        {
+            // Check if i divides evenly into num
+            if (num % i == 0)
+            {
+                // If so, print the result and exit
+                System.out.println(num + " is not a prime number.");
+                return;
+            }
+        }
+        // If no divisors were found, num is prime
+        System.out.println(num + " is a prime number!");
+    }
+}
