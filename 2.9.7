@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class DiceFrequencies
+{
+    public static void main(String[] args)
+    {
+        // Create Scanner for user input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt user for number of rolls
+        System.out.print("Enter the number of die rolls: ");
+        int rolls = scanner.nextInt();
+        
+        // Call rollDice method with user input
+        rollDice(rolls);
+        
+        // Close scanner
+        scanner.close();
+    }
+    
+    public static void rollDice(int rolls)
+    {
+        // Initialize array to store frequency of each die value (1 to 6)
+        int[] frequencies = new int[7]; // Index 0 unused, 1-6 for die faces
+        
+        // Simulate the specified number of rolls
+        for (int i = 0; i < rolls; i++) {
+            // Generate random die roll (1 to 6)
+            int roll = (int)(Math.random() * 6) + 1;
+            // Increment frequency for this roll
+            frequencies[roll]++;
+        }
+        
+        // Print frequencies with labels
+        System.out.println("Number of sixes: " + frequencies[6]);
+        System.out.println("Number of fives: " + frequencies[5]);
+        System.out.println("Number of fours: " + frequencies[4]);
+        System.out.println("Number of threes: " + frequencies[3]);
+        System.out.println("Number of twos: " + frequencies[2]);
+        System.out.println("Number of ones: " + frequencies[1]);
+    }
+}
