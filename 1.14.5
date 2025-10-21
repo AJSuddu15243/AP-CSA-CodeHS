@@ -1,0 +1,25 @@
+public class BalloonRunner 
+{
+    public static void main(String[] args) 
+    {
+        // Create two balloon objects
+        Balloon balloon1 = new Balloon(5.5, "blue");  // start color as blue
+        Balloon balloon2 = new Balloon(7.0, "yellow"); // start color as yellow
+        
+        // Print out initial information of each balloon
+        System.out.println("Initial state:");
+        System.out.println(balloon1);
+        System.out.println(balloon2);
+        
+        // Inflate first balloon by 10
+        balloon1.inflate(1);
+        
+        // Change the color of second balloon to silver
+        balloon2.changeColor("silver");
+        
+        // Print out final information of each balloon
+        System.out.println("After changes:");
+        System.out.println(balloon1);
+        System.out.println(balloon2);       
+    }
+}
