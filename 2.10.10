@@ -1,3 +1,36 @@
+public class Teen 
+{
+    private String firstName;
+    private String lastName;
+    private int grade;
+
+    // Constructor
+    public Teen(String theFirstName, String theLastName, int theGrade)
+    {
+        firstName = theFirstName;
+        lastName = theLastName;
+        grade = theGrade;
+    }
+    
+    // Replaces all '.' and sequences of one or more '!' with '!!'
+    public String teenTalk(String text)
+    {
+        // Replace periods with double exclamation marks
+        String modifiedText = text.replace(".", "!!");
+        // Replace any sequence of one or more exclamation marks with double exclamation marks
+        modifiedText = modifiedText.replaceAll("!+", "!!");
+        return modifiedText;
+    }
+    
+    // toString method to print out the state of teen object
+    public String toString()
+    {
+        return firstName + " " + lastName + ", grade " + grade + ", is texting...\n";
+    }
+}
+
+________________________________
+
 import java.util.Scanner;
 
 public class TeenRunner
