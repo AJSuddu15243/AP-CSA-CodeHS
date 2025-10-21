@@ -1,0 +1,56 @@
+public class ForLoops 
+{
+    public static void main(String[] args) 
+    {
+        System.out.println("loop1 output:");
+        loop1();
+        System.out.println("loop2 output:");
+        loop2();
+        System.out.println("loop3 output:");
+        loop3();
+        System.out.println("loop4 output:");
+        loop4();
+        System.out.println("loop5 output:");
+        loop5();
+    }
+
+    public static void loop1()
+    {
+        for (int i = 1; i < 6; i++) 
+        {
+            System.out.println(i);
+        }
+    }
+
+    public static void loop2()
+    {
+        for (int i = 5; i >= 1; i--) 
+        {
+            System.out.println(i);
+        }
+    }
+
+    public static void loop3()
+    {
+        for (int i = 2; i <= 10; i += 2) 
+        {
+            System.out.println(i);
+        }
+    }
+
+    public static void loop4()
+    {
+        for (int i = 3; i <= 12; i += 3) 
+        {
+            System.out.println(i);
+        }
+    }
+
+    public static void loop5()
+    {
+        for (int i = 100; i >= 1; i /= 2) 
+        {
+            System.out.println(i);
+        }
+    }
+}
