@@ -1,0 +1,15 @@
+public class SystemRunner
+{
+    public static void main(String[] args)
+    {
+        // Create a library, book, and member object:
+        Library library = new Library("City Library", "123 Main St", 500);
+        Book book = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180);
+        Member member = new Member("John Doe", 1001, false);
+        
+        // Print out each object:
+        System.out.println(library);
+        System.out.println(book);
+        System.out.println(member);
+    }
+}
