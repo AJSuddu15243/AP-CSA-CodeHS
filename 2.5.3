@@ -1,0 +1,23 @@
+public class BooleanDebug {
+    public static void main(String[] args) {
+        // Change these values to test different situations!
+        boolean isComplete = true;
+        boolean hasFeedback = true;
+
+        // Prints when work is complete but does not have feedback
+        if (isComplete && !hasFeedback) {
+            System.out.println("You're done! Now go get some feedback.");
+        }
+
+        // Prints when work is complete OR has feedback, but not (complete AND no feedback)
+        if ((isComplete || hasFeedback) && (isComplete && !hasFeedback)) 
+        {
+            System.out.println("You're on your way — keep it up!");
+        }
+
+        // Prints when work is NOT complete and does NOT have feedback
+        if (!isComplete && !hasFeedback) {
+            System.out.println("Nothing here yet — time to get moving!");
+        }
+    }
+}
