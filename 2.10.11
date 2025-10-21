@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Password
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a password: ");
+        String password = scanner.nextLine();
+        
+        if (passwordCheck(password)) {
+            System.out.println("Valid password");
+        } else {
+            System.out.println("Invalid password");
+        }
+        
+        scanner.close();
+    }
+    
+    /* Returns true if the password meets the criteria:
+    * at least 12 characters
+    * at least 1 number
+    * at least 1 letter
+    * at least one special character */
+    public static boolean passwordCheck(String password)
+    {
+        // Check length requirement
+        if (password.length() < 12) {
+            return false;
+        }
+        
+        // Initialize flags for each requirement
+        boolean hasLetter = false;
+        boolean hasNumber = false;
+        boolean hasSpecial = false;
+        
+        // Define special characters
+        String specialChars = "!@#$%^&*()-_=+|[]{};:/?.>";
+        
+        // Check each character in the password
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            
+            // Check for letter
+            if (Character.isLetter(c)) {
+                hasLetter = true;
+            }
+            // Check for number
+            else if (Character.isDigit(c)) {
+                hasNumber = true;
+            }
+            // Check for special character
+            else if (specialChars.indexOf(c) != -1) {
+                hasSpecial = true;
+            }
+        }
+        
+        // Return true only if all requirements are met
+        return hasLetter && hasNumber && hasSpecial;
+    }
+}
