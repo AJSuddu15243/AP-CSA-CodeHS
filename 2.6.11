@@ -1,18 +1,13 @@
-public class SchoolRunner
+public class School
 {
-    public static void main(String[] args)
+    public static void determineClassmates(Student one, Student two)
     {
-        Teacher mathTeacher = new Teacher("Mr. Smith", "Math");
-        Teacher scienceTeacher = new Teacher("Ms. Johnson", "Science");
-
-        Student student1 = new Student("Alice", mathTeacher);
-        Student student2 = new Student("Bob", mathTeacher);
-        Student student3 = new Student("Charlie", scienceTeacher);
-        Student student4 = student1;
-
-        // Call determineClassmates with different student pairs
-        School.determineClassmates(student1, student2);
-        School.determineClassmates(student1, student3);
-        School.determineClassmates(student1, student4);
+        if (one == two) {
+            System.out.println("Same student");
+        } else if (one.getTeacher().equals(two.getTeacher())) {
+            System.out.println("Same class");
+        } else {
+            System.out.println("Different class");
+        }
     }
 }
