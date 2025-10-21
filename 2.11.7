@@ -1,3 +1,39 @@
+public class Grid 
+{
+    private int size;
+    
+    public Grid(int gridSize)
+    {
+        size = gridSize;
+    }
+    
+    // Prints a grid of size `size`
+    public void printGrid()
+    {
+        for (int row = 0; row < size; row++)
+        {
+            for (int col = 0; col < size; col++)
+            {
+                // Print coordinate (row,col)
+                System.out.print("(" + row + "," + col + ")");
+                // Add a space after each coordinate, except for the last one in the row
+                if (col < size - 1)
+                {
+                    System.out.print(" ");
+                }
+            }
+            // Move to the next line after each row
+            System.out.println();
+        }
+    }
+    
+    public String toString()
+    {
+        return "Grid with a size of " + size;
+    }
+}
+____________________________
+
 public class GridRunner
 {
     public static void main(String[] args)
