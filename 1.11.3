@@ -1,0 +1,42 @@
+public class MathProgram
+{
+    public static void main(String[] args)
+    {
+        // Original methods
+        double power = Math.pow(5, 3);
+        System.out.print("5^3 = ");
+        System.out.println(power);
+
+        double absolute = Math.abs(-20);
+        System.out.print("Absolute value of -20 = ");
+        System.out.println(absolute);
+
+        double square = Math.sqrt(144);
+        System.out.print("Square root of 144 = ");
+        System.out.println(square);
+
+        int random = (int)(Math.random() * 11) + 10;
+        System.out.print("Random int between 10 and 20 = ");
+        System.out.println(random);
+
+        // New Math method 1: Sine of an angle
+        double sineValue = Math.sin(Math.PI / 2); // 90 degrees in radians
+        System.out.print("Sine of 90 degrees (PI/2 radians) = ");
+        System.out.println(sineValue);
+
+        // New Math method 2: Round a double
+        long roundedValue = Math.round(15.67);
+        System.out.print("Rounding 15.67 to the nearest integer = ");
+        System.out.println(roundedValue);
+
+        // New Math method 3: Maximum of two numbers
+        double maxValue = Math.max(42.5, 17.3);
+        System.out.print("Maximum of 42.5 and 17.3 = ");
+        System.out.println(maxValue);
+
+        // New Math method 4: Natural logarithm
+        double logValue = Math.log(Math.E); // Natural log of e
+        System.out.print("Natural logarithm of e = ");
+        System.out.println(logValue);
+    }
+}
