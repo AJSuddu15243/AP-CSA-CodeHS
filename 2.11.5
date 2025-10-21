@@ -1,0 +1,25 @@
+public class InvertedTriangle
+{
+    public static void main(String[] args)
+    {  
+       makeInvertedTriangle();
+    }
+     
+    public static void makeInvertedTriangle()
+    {
+        for (int i = 0; i <= 6; i++)
+        {
+            // Print stars: 7 - i stars
+            for (int j = 1; j <= 7 - i; j++)
+            {
+                System.out.print("*");
+            }
+            // Print dashes: i dashes
+            for (int k = 1; k <= i; k++)
+            {
+                System.out.print("-");
+            }
+            System.out.println("");
+        } 
+    }
+}
