@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class TemperatureClassifier {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("Enter the temperature (in Celsius) or type 'exit' to quit: ");
+            
+            // Check for exit command
+            if (input.hasNext("exit")) {
+                System.out.println("Program terminated.");
+                break;
+            }
+
+            try {
+                // Read temperature as an integer
+                int temperature = input.nextInt();
+
+                // Validate temperature range
+                if (temperature < -100 || temperature > 100) {
+                    System.out.println("Error: Temperature out of realistic range (-100°C to 100°C).");
+                    continue;
+                }
+
+                // Classify temperature using if-else-if statements
+                if (temperature <= 0) {
+                    System.out.println("Freezing");
+                } else if (temperature <= 10) {
+                    System.out.println("Cold");
+                } else if (temperature <= 20) {
+                    System.out.println("Mild");
+                } else if (temperature <= 30) {
+                    System.out.println("Warm");
+                } else {
+                    System.out.println("Hot");
+                }
+            } catch (Exception e) {
+                System.out.println("Error: Please enter a valid integer temperature.");
+                input.next(); // Clear invalid input
+            }
+        }
+
+        input.close();
+    }
+}
