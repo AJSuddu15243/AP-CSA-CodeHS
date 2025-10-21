@@ -1,0 +1,14 @@
+public class BottleRunner 
+{
+    public static void main(String[] args) 
+    {
+        WaterBottle bottle = new WaterBottle(1.0, 1.0); // start full
+
+        bottle.drink(0.3);   // volumeConsumed: 0.3, currentVolume: 0.7
+        bottle.drink(0.4);   // volumeConsumed: 0.7, currentVolume: 0.3
+        bottle.refill(0.3);  // currentVolume: 0.6
+        bottle.drink(0.4);   // volumeConsumed: 1.1, currentVolume stays 0.6
+        bottle.refill(0.4);
+        System.out.println(bottle);
+    }
+}
