@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Salmon 
+{
+    public static void main(String[] args) 
+    {
+        // Create Scanner object to accept user input
+        Scanner input = new Scanner(System.in);
+        
+        // Prompt user for month and capture input
+        System.out.println("Enter month of year as a number: ");
+        int month = input.nextInt();
+        
+        // Check month using compound boolean expressions
+        if (month < 1 || month > 12) {
+            System.out.println("Invalid month.");
+        } else if (month >= 8 && month <= 11) {
+            System.out.println("Spawning season");
+        } else {
+            System.out.println("Not spawning season");
+        }
+    }
+}
